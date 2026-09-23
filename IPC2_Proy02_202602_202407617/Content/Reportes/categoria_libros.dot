@@ -1,0 +1,7 @@
+digraph LibrosCategoria {
+rankdir=TB;
+node [shape=record];
+n1002 [label="{1002|Calculo|James Stewart}"];
+n1006 [label="{1006|Algebra Lineal|Gilbert Strang}"];
+n1002 -> n1006;
+}

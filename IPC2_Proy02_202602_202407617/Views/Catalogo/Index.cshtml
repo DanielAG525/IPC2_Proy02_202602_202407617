@@ -1,0 +1,150 @@
+﻿@{
+    ViewBag.Title = "Catálogo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>Catálogo de Libros</h1>
+    <p>Administración de libros y categorías</p>
+</div>
+
+<div class="row">
+
+    <div class="col-md-4">
+        <h2>Cargar</h2>
+        <p>Cargar información desde un archivo XML.</p>
+
+        <a href="@Url.Action("Cargar", "Catalogo")"
+           class="btn btn-default btn-block">
+            Cargar archivo
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Buscar</h2>
+        <p>Buscar un libro mediante su ISBN.</p>
+
+        <a href="@Url.Action("Buscar", "Catalogo")"
+           class="btn btn-default btn-block">
+            Buscar libro
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Reportes</h2>
+        <p>Visualizar gráficamente las estructuras.</p>
+
+        <a href="@Url.Action("Reporte", "Catalogo")"
+           class="btn btn-default btn-block">
+            Ver estructuras
+        </a>
+    </div>
+
+</div>
+
+<hr />
+
+<div class="row">
+
+    <div class="col-md-4">
+        <h2>Agregar libro</h2>
+        <p>Registrar un nuevo libro en el catálogo.</p>
+
+        <a href="@Url.Action("AgregarLibro", "Catalogo")"
+           class="btn btn-primary btn-block">
+            Agregar libro
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Eliminar libro</h2>
+        <p>Eliminar un libro mediante su ISBN.</p>
+
+        <a href="@Url.Action("EliminarLibro", "Catalogo")"
+           class="btn btn-danger btn-block">
+            Eliminar libro
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Agregar categoría</h2>
+        <p>Registrar una nueva categoría o subcategoría.</p>
+
+        <a href="@Url.Action("AgregarCategoria", "Catalogo")"
+           class="btn btn-primary btn-block">
+            Agregar categoría
+        </a>
+    </div>
+
+</div>
+
+<hr />
+
+<div class="row">
+
+    <div class="col-md-4">
+        <h2>Libros</h2>
+        <p>Mostrar todos los libros ordenados por ISBN.</p>
+
+        <a href="@Url.Action("Libros", "Catalogo")"
+           class="btn btn-success btn-block">
+            Ver libros
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Categorías</h2>
+        <p>Mostrar la estructura de categorías.</p>
+
+        <a href="@Url.Action("Categorias", "Catalogo")"
+           class="btn btn-success btn-block">
+            Ver categorías
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Extremos ISBN</h2>
+        <p>Consultar el libro con menor y mayor ISBN.</p>
+
+        <a href="@Url.Action("ExtremosISBN", "Catalogo")"
+           class="btn btn-success btn-block">
+            Ver menor y mayor ISBN
+        </a>
+    </div>
+
+</div>
+
+<hr />
+
+<div class="row">
+
+    <div class="col-md-6">
+        <h2>Libros por categoría</h2>
+        <p>
+            Consultar libros pertenecientes a una categoría
+            y visualizar su gráfica.
+        </p>
+
+        <a href="@Url.Action("LibrosPorCategoria", "Catalogo")"
+           class="btn btn-info btn-block">
+            Consultar categoría
+        </a>
+    </div>
+
+    <div class="col-md-6">
+        <h2>Ayuda</h2>
+        <p>
+            Consultar información del estudiante
+            y documentación del proyecto.
+        </p>
+
+        <a href="@Url.Action("Ayuda", "Catalogo")"
+           class="btn btn-info btn-block">
+            Ver ayuda
+        </a>
+    </div>
+
+</div>
+
+<br />
+<br />

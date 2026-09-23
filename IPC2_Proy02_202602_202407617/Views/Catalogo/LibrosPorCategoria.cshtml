@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "Libros por categoría";
+}
+
+<div class="container" style="margin-top:30px;">
+
+    <h2>Libros por categoría</h2>
+    <hr />
+
+    <div class="panel panel-primary">
+
+        <div class="panel-heading">
+            Buscar categoría
+        </div>
+
+        <div class="panel-body">
+
+            @using (Html.BeginForm(
+                "LibrosPorCategoria",
+                "Catalogo",
+                FormMethod.Post))
+            {
+                <div class="form-group">
+
+                    <label>Nombre de la categoría</label>
+
+                    <input type="text"
+                           name="categoria"
+                           class="form-control"
+                           placeholder="Ejemplo: Fisica"
+                           required />
+
+                </div>
+
+                <button type="submit"
+                        class="btn btn-primary">
+                    Buscar
+                </button>
+            }
+
+        </div>
+
+    </div>
+
+    @if (ViewBag.BusquedaRealizada == true)
+    {
+        string datos =
+            ViewBag.Libros == null
+            ? ""
+            : ViewBag.Libros.ToString();
+
+        if (!string.IsNullOrWhiteSpace(datos))
+        {
+            <div class="panel panel-success">
+
+                <div class="panel-heading">
+                    Libros de la categoría:
+                    @ViewBag.Categoria
+                </div>
+
+                <div class="panel-body">
+
+                    <pre>@datos</pre>
+
+                </div>
+
+            </div>
+
+            if (ViewBag.Grafica != null)
+            {
+                <div class="panel panel-info">
+
+                    <div class="panel-heading">
+                        Gráfica de libros
+                    </div>
+
+                    <div class="panel-body">
+
+                        <img src="@ViewBag.Grafica"
+                             class="img-responsive"
+                             alt="Gráfica de libros por categoría" />
+
+                    </div>
+
+                </div>
+            }
+        }
+        else
+        {
+            <div class="alert alert-warning">
+                No se encontraron libros para la categoría indicada.
+                Verifique que la categoría exista y que tenga libros registrados.
+            </div>
+        }
+    }
+
+    <a href="@Url.Action("Categorias", "Catalogo")"
+       class="btn btn-success">
+        Ver categorías
+    </a>
+
+    <a href="@Url.Action("Index", "Catalogo")"
+       class="btn btn-default">
+        Regresar
+    </a>
+
+</div>

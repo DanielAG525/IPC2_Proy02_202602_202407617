@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Libros";
+}
+
+<div class="container" style="margin-top:30px;">
+
+    <h2>Libros registrados</h2>
+    <hr />
+
+    @if (ViewBag.Libros != null &&
+         !string.IsNullOrWhiteSpace(ViewBag.Libros.ToString()))
+    {
+        <div class="panel panel-primary">
+
+            <div class="panel-heading">
+                Listado de libros ordenados por ISBN
+            </div>
+
+            <div class="panel-body">
+
+                <table class="table table-bordered table-striped">
+
+                    <thead>
+                        <tr>
+                            <th>ISBN</th>
+                            <th>Título</th>
+                            <th>Autor</th>
+                            <th>Categoría</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        @{
+                            string datos = ViewBag.Libros.ToString();
+
+                            string[] filas =
+                                datos.Split(
+                                    new[] { '\n' },
+                                    System.StringSplitOptions.RemoveEmptyEntries);
+
+                            foreach (string fila in filas)
+                            {
+                                string[] columnas =
+                                    fila.Trim().Split('|');
+
+                                if (columnas.Length == 4)
+                                {
+                                    <tr>
+                                        <td>@columnas[0].Trim()</td>
+                                        <td>@columnas[1].Trim()</td>
+                                        <td>@columnas[2].Trim()</td>
+                                        <td>@columnas[3].Trim()</td>
+                                    </tr>
+                                }
+                            }
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            No existen libros registrados.
+        </div>
+    }
+
+    <a href="@Url.Action("Index", "Catalogo")"
+       class="btn btn-default">
+        Regresar
+    </a>
+
+</div>

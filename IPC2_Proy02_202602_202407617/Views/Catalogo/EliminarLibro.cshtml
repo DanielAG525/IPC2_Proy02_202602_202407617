@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Eliminar libro";
+}
+
+<div class="container" style="margin-top:30px;">
+
+    <h2>Eliminar libro</h2>
+    <hr />
+
+    @if (ViewBag.Mensaje != null)
+    {
+        <div class="alert alert-info">
+            @ViewBag.Mensaje
+        </div>
+    }
+
+    <div class="panel panel-danger">
+
+        <div class="panel-heading">
+            Eliminar libro por ISBN
+        </div>
+
+        <div class="panel-body">
+
+            @using (Html.BeginForm(
+                "EliminarLibro",
+                "Catalogo",
+                FormMethod.Post))
+            {
+                <div class="form-group">
+
+                    <label>ISBN del libro</label>
+
+                    <input type="number"
+                           name="isbn"
+                           class="form-control"
+                           min="1"
+                           required />
+
+                    <p class="help-block">
+                        Ingrese el ISBN del libro que desea eliminar.
+                    </p>
+
+                </div>
+
+                <button type="submit"
+                        class="btn btn-danger">
+                    Eliminar libro
+                </button>
+            }
+
+        </div>
+
+    </div>
+
+    <a href="@Url.Action("Libros", "Catalogo")"
+       class="btn btn-primary">
+        Ver libros
+    </a>
+
+    <a href="@Url.Action("Index", "Catalogo")"
+       class="btn btn-default">
+        Regresar
+    </a>
+
+</div>

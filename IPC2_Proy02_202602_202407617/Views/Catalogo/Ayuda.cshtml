@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Ayuda";
+}
+
+<div class="container" style="margin-top:30px;">
+
+    <h2>Ayuda</h2>
+    <hr />
+
+    <div class="panel panel-primary">
+
+        <div class="panel-heading">
+            Datos del estudiante
+        </div>
+
+        <div class="panel-body">
+
+            <p>
+                <strong>Nombre:</strong>
+                Alejandro Daniel Guzmán Calel
+            </p>
+
+            <p>
+                <strong>Carné:</strong>
+                202407617
+            </p>
+
+            <p>
+                <strong>Curso:</strong>
+                Introducción a la Programación y Computación 2
+            </p>
+
+            <p>
+                <strong>Proyecto:</strong>
+                Proyecto 2
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="panel panel-success">
+
+        <div class="panel-heading">
+            Documentación
+        </div>
+
+        <div class="panel-body">
+
+            <p>
+                Consulte la documentación del proyecto
+                en el repositorio correspondiente.
+            </p>
+
+            <a href="https://github.com/"
+               target="_blank"
+               class="btn btn-success">
+                Ver documentación
+            </a>
+
+        </div>
+
+    </div>
+
+    <a href="@Url.Action("Index", "Catalogo")"
+       class="btn btn-default">
+        Regresar
+    </a>
+
+</div>

@@ -1,0 +1,36 @@
+﻿@{
+	ViewBag.Title = "Categorías";
+}
+
+<div class="container" style="margin-top:30px;">
+
+	<h2>Categorías</h2>
+	<hr />
+
+	<div class="panel panel-success">
+
+		<div class="panel-heading">
+			Estructura de categorías
+		</div>
+
+		<div class="panel-body">
+
+			@if (ViewBag.Categorias != null)
+			{
+				<pre>@ViewBag.Categorias</pre>
+			}
+			else
+			{
+				<p>No existen categorías registradas.</p>
+			}
+
+		</div>
+
+	</div>
+
+	<a href="@Url.Action("Index", "Catalogo")"
+	   class="btn btn-default">
+		Regresar
+	</a>
+
+</div>

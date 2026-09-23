@@ -1,0 +1,100 @@
+﻿@using IPC2_Proy02_202602_202407617.Models
+
+@{
+    ViewBag.Title = "ISBN menor y mayor";
+}
+
+<div class="container" style="margin-top:30px;">
+
+    <h2>ISBN menor y mayor</h2>
+    <hr />
+
+    @{
+        Libro menor = ViewBag.Menor as Libro;
+        Libro mayor = ViewBag.Mayor as Libro;
+    }
+
+    @if (menor != null && mayor != null)
+    {
+        <div class="panel panel-success">
+
+            <div class="panel-heading">
+                Libro con menor ISBN
+            </div>
+
+            <div class="panel-body">
+
+                <p>
+                    <strong>ISBN:</strong>
+                    @menor.ISBN
+                </p>
+
+                <p>
+                    <strong>Título:</strong>
+                    @menor.Titulo
+                </p>
+
+                <p>
+                    <strong>Autor:</strong>
+                    @menor.Autor
+                </p>
+
+                <p>
+                    <strong>Categoría:</strong>
+                    @menor.Categoria
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="panel panel-primary">
+
+            <div class="panel-heading">
+                Libro con mayor ISBN
+            </div>
+
+            <div class="panel-body">
+
+                <p>
+                    <strong>ISBN:</strong>
+                    @mayor.ISBN
+                </p>
+
+                <p>
+                    <strong>Título:</strong>
+                    @mayor.Titulo
+                </p>
+
+                <p>
+                    <strong>Autor:</strong>
+                    @mayor.Autor
+                </p>
+
+                <p>
+                    <strong>Categoría:</strong>
+                    @mayor.Categoria
+                </p>
+
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            No existen libros registrados.
+        </div>
+    }
+
+    <a href="@Url.Action("Libros", "Catalogo")"
+       class="btn btn-primary">
+        Ver libros
+    </a>
+
+    <a href="@Url.Action("Index", "Catalogo")"
+       class="btn btn-default">
+        Regresar
+    </a>
+
+</div>

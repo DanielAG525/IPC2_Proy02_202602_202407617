@@ -1,0 +1,21 @@
+digraph Categorias {
+rankdir=TB;
+node [shape=box];
+cat_Libros [label="Libros"];
+cat_Libros -> cat_Ciencia;
+cat_Libros -> cat_Literatura;
+cat_Libros -> cat_Tecnologia;
+cat_Ciencia [label="Ciencia"];
+cat_Ciencia -> cat_Fisica;
+cat_Ciencia -> cat_Matematica;
+cat_Fisica [label="Fisica"];
+cat_Matematica [label="Matematica"];
+cat_Literatura [label="Literatura"];
+cat_Literatura -> cat_Fantasia;
+cat_Literatura -> cat_Novela;
+cat_Fantasia [label="Fantasia"];
+cat_Novela [label="Novela"];
+cat_Tecnologia [label="Tecnologia"];
+cat_Tecnologia -> cat_Programacion;
+cat_Programacion [label="Programacion"];
+}
